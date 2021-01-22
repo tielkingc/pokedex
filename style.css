@@ -1,0 +1,43 @@
+.nav-bar {
+    height: 4vh;
+    background-color: black;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+.nav-bar li a{
+    display: block;
+    float: left;
+    color: white;
+    padding: 1vh;
+}
+
+.nav-bar li a:hover {
+    background-color: darkgreen;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkgrey;
+}
+
+.main-content {
+    width: 75%;
+    height: 95vh;
+    background-color: firebrick;
+    position: absolute;
+    left: 12.5%;
+}
