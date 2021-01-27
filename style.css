@@ -41,3 +41,78 @@ a:hover {
     position: absolute;
     left: 12.5%;
 }
+
+.info-box {
+    float: left;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.search-box {
+    width: 50%;
+    float: right;
+    display: inline-block;
+    margin-top: 2%;
+    margin-right:5%;
+}
+
+.search-type {
+    height: 40px;
+    background-color: aqua;
+    padding-top: 5px;
+    position: relative;
+}
+
+.search-name {
+    height: 40px;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 25px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.search-pic {
+    height:40px;
+    background-color: aqua;
+    margin-top: 25px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.text {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
