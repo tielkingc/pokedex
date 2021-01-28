@@ -38,7 +38,7 @@
                 <button class="collapsible" style="margin-top: 20px;">Search by Type</button>
                 <div class="content">
                   <table>
-                      <form class="types">
+                      <form class="types" action="dbsearch.php" method="POST">
                         <tr>
                             <td>
                                 <input type="checkbox" id="type1" name="type1" value="Normal">
@@ -85,7 +85,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="checkbox" id="type11" name="type11" value="Grass">
+                                <input type="checkbox" id="type11" name="search" value="Grass">
   <label for="type11"> Grass</label><br>
                             </td>
                             <td>
@@ -130,7 +130,7 @@
                     <form action="/action_page.php">
                         <br><label for="myfile">Select a file:</label>
                         <input type="file" id="myfile" name="myfile"><br><br>
-                        <input type="submit" value="Submit"><br>
+                        <input type="submit" value="Submit" name="search"><br>
                       </form>
                 </div>
             </div>
