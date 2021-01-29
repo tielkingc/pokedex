@@ -1,8 +1,11 @@
-picture with stats on left
-
-search by:
-    type
-    name
-    picture
-
-collapsing seacch bys
+echo "Name: ".
+	$row["Name"].
+	"  ".
+	"Types: ".
+	$row["type1"].
+	"  ".
+	$row["type2"].
+	"<br>".
+	"HP:".
+	$row["hp"].
+	"<br>";
