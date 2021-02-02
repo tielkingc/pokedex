@@ -18,30 +18,11 @@ $sql = "select * from pokemon where type1 or type2 like '%$search%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
-while($row = $result->fetch_assoc() ){
-	echo "Name: ".
-	$row["Name"].
-	"  ".
-	"Types: ".
-	$row["type1"].
-	"  ".
-	$row["type2"].
-	"<br>".
-	"Stats: ".
-	"<b>HP: </b>".
-	$row["hp"].
-	"<b>Attack: </b>".
-	$row["attack"].
-	"<b>  Defense: </b>".
-	$row["defense"].
-	"<b>  Special Attack: </b>".
-	$row["sp_attack"].
-	"<b>  Speacial Defense: </b>".
-	$row["sp_defense"].
-	"<b>  Speed: </b>".
-	$row["speed"].
-	"<br>";
+	echo '<ul style="list-style-type:none;">';
+	while($row = $result->fetch_assoc() ){
+		echo '<li style="text-decoration:none;">' . '<a href="' . $row["link"] . '" style="text-decoration=none;">' . $row['Name'] . '</a>' . '</li>';
 }
+	echo "</ul>";
 } else {
 	echo "0 records";
 }

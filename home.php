@@ -55,7 +55,7 @@
                 <button class="collapsible" style="margin-top: 20px;">Search by Type</button>
                 <div class="content">
                   <table class="typesearch">
-                      <form class="types" action="" method="post">
+                      <form class="types" action="" method="POST">
                         <tr>
                             <td>
                                 <input type="checkbox" id="type1" name="search" value="Normal">
@@ -143,37 +143,39 @@
                   </table>
                   <div>
                     <?php
+                    if(isset($_POST["search"])):
 
-$search = $_POST['search'];
+                        $search = $_POST["search"];                    
 
-$servername = "localhost";
-$username = "root";
-$password = "2wlkj77g";
-$db = "poke";
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "2wlkj77g";
+                        $db = "poke";
 
-$conn = new mysqli($servername, $username, $password, $db);
+                        $conn = new mysqli($servername, $username, $password, $db);
 
-if ($conn->connect_error){
-	die("Connection failed: ". $conn->connect_error);
-}
+                        if ($conn->connect_error){
+                            die("Connection failed: ". $conn->connect_error);
+                        }
 
-$sql = "select * from pokemon where type1 or type2 like '%$search%'";
+                        $sql = "select * from pokemon where (type1 = '$search') or (type2 = '$search')";
 
-$result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-if ($result->num_rows > 0){
-	echo '<ul style="list-style-type:none;">';
-	while($row = $result->fetch_assoc() ){
-		echo '<li style="text-decoration:none;">' . '<a href="' . $row["link"] . '" style="text-decoration=none;">' . $row['Name'] . '</a>' . '</li>';
-}
-	echo "</ul>";
-} else {
-	echo "0 records";
-}
+                        if ($result->num_rows > 0){
+                            echo '<ul style="list-style-type:none;">';
+                            while($row = $result->fetch_assoc() ){
+                                echo '<li style="text-decoration:none;">' . '<a target="_blank" href="' . $row["link"] . '" style="text-decoration=none;">' . $row['Name'] . '</a>' . '</li>';
+                        }
+                            echo "</ul>";
+                        } else {
+                            echo " ";
+                        }
 
-$conn->close();
+                        $conn->close();
+                    endif;
 
-?>
+                    ?>
                   </div>
                 </div>
                 <button class="collapsible" style="margin-top: 20px;">Search by Picture</button>
